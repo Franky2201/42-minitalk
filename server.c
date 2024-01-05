@@ -6,7 +6,7 @@
 /*   By: gde-win <gde-win@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 14:02:37 by gde-win           #+#    #+#             */
-/*   Updated: 2024/01/05 00:46:44 by gde-win          ###   ########.fr       */
+/*   Updated: 2024/01/05 01:13:17 by gde-win          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(void)
 	int					pid;
 
 	pid = getpid();
-	ft_printf("%i\n", pid);
+	ft_printf("Server PID: %i\n", pid);
 	ft_bzero(&action, sizeof(action));
 	action.sa_handler = ft_intercept_signal;
 	if (sigaction(SIGUSR1, &action, NULL) != 0)

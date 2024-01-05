@@ -6,7 +6,7 @@
 /*   By: gde-win <gde-win@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 14:02:48 by gde-win           #+#    #+#             */
-/*   Updated: 2024/01/05 00:47:20 by gde-win          ###   ########.fr       */
+/*   Updated: 2024/01/05 01:11:47 by gde-win          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ int	main(int ac, char **av)
 		i++;
 	}
 	ft_send_char_to_server((pid_t)pid, '\0');
+	ft_printf("Message Sent\n");
 }
