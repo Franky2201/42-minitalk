@@ -24,7 +24,7 @@ void	ft_send_char_to_server(pid_t pid, char c)
 		else
 			kill(pid, SIGUSR2);
 		bit_shift++;
-		usleep(50);
+		usleep(200);
 	}
 }
 
