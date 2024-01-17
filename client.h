@@ -17,7 +17,7 @@
 # include "libft/libft.h"
 
 int		main(int ac, char **av);
-void	ft_check_args(int ac, char **av, int pid);
+void	ft_check_args(int ac, char **av, int *pid);
 void	ft_send_char_to_server(pid_t pid, char c);
 
 #endif
