@@ -28,7 +28,7 @@ void	ft_send_char_to_server(pid_t pid, char c)
 	}
 }
 
-void	ft_check_args(int ac, char **av, int pid)
+void	ft_check_args(int ac, char **av, int *pid)
 {
 	size_t	i;
 
@@ -41,7 +41,8 @@ void	ft_check_args(int ac, char **av, int pid)
 	i = 0;
 	while (ft_isdigit(av[1][i]) == 1)
 		i++;
-	if (av[1][i] != '\0' || pid < 1 || pid >= INT_MAX)
+	*pid = ft_atoi(av[1]);
+	if (av[1][i] != '\0' || *pid < 1 || *pid >= INT_MAX)
 	{
 		ft_printf("INVALID PID\n");
 		exit(EXIT_FAILURE);
@@ -53,8 +54,7 @@ int	main(int ac, char **av)
 	size_t	i;
 	int		pid;
 
-	pid = ft_atoi(av[1]);
-	ft_check_args(ac, av, pid);
+	ft_check_args(ac, av, &pid);
 	i = 0;
 	while (av[2][i] != '\0')
 	{
