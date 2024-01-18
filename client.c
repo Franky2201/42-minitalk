@@ -6,7 +6,7 @@
 /*   By: gde-win <gde-win@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 14:02:48 by gde-win           #+#    #+#             */
-/*   Updated: 2024/01/17 15:59:16 by gde-win          ###   ########.fr       */
+/*   Updated: 2024/01/18 17:30:09 by gde-win          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_send_char_to_server(pid_t pid, char c)
 		else
 			kill(pid, SIGUSR2);
 		bit_shift++;
-		usleep(100);
+		usleep(150);
 	}
 }
 
