@@ -56,18 +56,20 @@ int	main(int ac, char **av)
 	int		pid;
 
 	ft_check_args(ac, av, &pid);
+	ft_printf("Sending Data");
 	i = 0;
 	while (av[2][i] != '\0')
 	{
 		j = 0;
-		while (j < 1000 && av[2][i + j] != '\0')
+		while (j < 100 && av[2][i + j] != '\0')
 		{
 			ft_send_char_to_server((pid_t)pid, av[2][i + j]);
+			ft_printf(".");
 			j++;
 		}
 		usleep(50);
 		i += j;
 	}
 	ft_send_char_to_server((pid_t)pid, '\0');
-	ft_printf("Message Sent\n");
+	ft_printf("\nData Sent\n");
 }
