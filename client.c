@@ -6,7 +6,7 @@
 /*   By: gde-win <gde-win@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 14:02:48 by gde-win           #+#    #+#             */
-/*   Updated: 2024/01/18 17:30:09 by gde-win          ###   ########.fr       */
+/*   Updated: 2024/01/23 11:57:43 by gde-win          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_send_char_to_server(pid_t pid, char c)
 		else
 			kill(pid, SIGUSR2);
 		bit_shift++;
-		usleep(150);
+		usleep(300);
 	}
 }
 
@@ -64,10 +64,10 @@ int	main(int ac, char **av)
 		while (j < 100 && av[2][i + j] != '\0')
 		{
 			ft_send_char_to_server((pid_t)pid, av[2][i + j]);
-			ft_printf(".");
 			j++;
 		}
-		usleep(50);
+		ft_printf(".");
+		usleep(100);
 		i += j;
 	}
 	ft_send_char_to_server((pid_t)pid, '\0');
